@@ -6,7 +6,7 @@ const forcast=require('./utils/forcast')
 
 
 const app=express()
-
+const port=process.env.PORT || 5050
 // console.log(__dirname)
 // console.log(__filename)
 const partials_path=path.join(__dirname,'../templates/partials')
@@ -118,6 +118,6 @@ app.get('/products',(req,res)=>{
 
 
 
-app.listen(5050,(req,res)=>{
+app.listen(port,(req,res)=>{
     console.log('server is running..............')
 })
