@@ -7,8 +7,9 @@ const forcast=require('./utils/forcast')
 
 const app=express()
 const port=process.env.PORT || 5050
-// console.log(__dirname)
-// console.log(__filename)
+
+
+
 const partials_path=path.join(__dirname,'../templates/partials')
 const views_path=path.join(__dirname,'../templates/views')
 
@@ -25,7 +26,6 @@ app.use(express.static(path.join(__dirname,'../public')))
 
 app.get('',(req,res)=>{
     console.log('we are in home page........')
-    //res.send('<h1>welcome</h1>')
     res.render('index',{
         title: 'weather',
         name: 'samrat'
@@ -36,7 +36,6 @@ app.get('',(req,res)=>{
 
 app.get('/help',(req,res)=>{
     console.log('we are in help route........')
-    //res.send('welcome')
     res.render("help",{
         title:'help',
         name:'samrat'
@@ -47,13 +46,6 @@ app.get('/help',(req,res)=>{
 
 app.get('/about',(req,res)=>{
     console.log('we are in about route..........')
-    // res.send([{
-    //     name: 'Samrat',
-    //     desc: 'kolkata'
-    // },{
-    //     name: 'sayan',
-    //     desc: 'howrah'
-    // }])
     res.render('about',{
         title : 'about',
         name : 'samrat'
@@ -82,20 +74,9 @@ app.get('/weather',(req,res)=>{
                 location:data.location,
                 address:req.query.address
             })
-            // console.log("location :",data.location)
-            // console.log("forcast: ",dataa)
-            })
+        })
     })
     
-    
-    
-
-
-    // res.send({
-    //     forcast:'see forcast.....',
-    //     geocode:'see geocode........',
-    //     address: req.query.address
-    // })
 })
 
 
