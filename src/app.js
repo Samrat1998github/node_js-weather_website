@@ -100,5 +100,5 @@ app.get('/products',(req,res)=>{
 
 
 app.listen(port,(req,res)=>{
-    console.log('server is running..............')
+    console.log('server is running at port ' + port)
 })
